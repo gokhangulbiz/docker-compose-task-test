@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  notebook:
+    image: jupyter/base-notebook:latest
+    ports:
+      - "3010:8888"
+  webapplication1:
+    image: ${DOCKER_REGISTRY-}webapplication1
+    build:
+      context: .
+      dockerfile: WebApplication1/Dockerfile
